@@ -31,12 +31,15 @@ This is designed for Arduino 1.6.7+
 Option 1)  Arduino Board Package Manager:
    1. Start Arduino
    2. Open menu File/Preferences
-   3. Copy the following URL into the 'Additional Boards manager URLs:' box.
+   3. Click the 'window box' to the right of the 'Additional Boards manager URLs:' entry window.
+      * This will allow you to add more than one entry
+   4. Copy the following URL into the box.
        * https://thomasonw.github.io/ATmegaCAN/package_thomasonw_ATmegaCAN_index.json
-   4. Press OK button
-   5. Open the Tools/Boards menu and select Boards Manager
-   6. Scroll down and click on the 'ATmegaCAN by thomasonw version x.x.x' entery
-   7. press the Install button
+   5. Press OK button to close the data entry window
+   6. Press OK button to close the Preferences menu.
+   7. Open the Tools/Boards menu and select Boards Manager
+   8. Scroll down and click on the 'ATmegaCAN by thomasonw version x.x.x' entry
+   9. press the Install button
 
 
 Option 2) Manual Install:
@@ -46,9 +49,9 @@ Option 2) Manual Install:
    3. Restart the Arduino IDE
 
 
+After either is used to install the support files, you can select the new CPUs from the tools/boards menu.
 
-
-Support for IDE versions released prior to 1.6.7 maybe found at:
+Support for IDE versions released prior to 1.6.7 may be found at:
    http://smartmppt.blogspot.com/search/label/xxM1-IDE
 
 
