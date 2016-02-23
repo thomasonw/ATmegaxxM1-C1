@@ -9,8 +9,8 @@ ATmegaCAN is an extension to the Arduino IDE environment enabling several of the
 CAN containing CPUs.
 
 * Currently supported CPUs include:
-** ATmega64M1
-** ATmega32M1
+ * ATmega64M1
+ * ATmega32M1
 
 
 Future:
