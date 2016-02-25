@@ -3,6 +3,12 @@
 /*
   Part of the Wiring project - http://wiring.uniandes.edu.co
 
+  
+  Modified to support ATmega32M1, ATmega64M1, etc.   Feb 2016  
+        Al Thomason:  http://smartmppt.blogspot.com/
+
+
+
   Copyright (c) 2004-05 Hernando Barragan
 
   This library is free software; you can redistribute it and/or
@@ -147,6 +153,21 @@ void attachInterrupt(uint8_t interruptNum, void (*userFunc)(void), int mode) {
       GIMSK |= (1 << INT2);
     #endif
       break;
+      
+          
+    case 3:                                                                         // ATmegaxxM1's have 4 Arduino user IRQs
+    #if defined(EICRA) && defined(ISC30) && defined(ISC31) && defined(EIMSK)
+      EICRA = (EICRA & ~((1 << ISC30) | (1 << ISC31))) | (mode << ISC30);
+      EIMSK |= (1 << INT3);
+    #elif defined(MCUCR) && defined(ISC30) && defined(ISC31) && defined(GICR)
+      MCUCR = (MCUCR & ~((1 << ISC30) | (1 << ISC31))) | (mode << ISC30);
+      GICR |= (1 << INT3);
+    #elif defined(MCUCR) && defined(ISC30) && defined(GIMSK) && defined(GIMSK)
+      MCUCR = (MCUCR & ~((1 << ISC30) | (1 << ISC31))) | (mode << ISC30);
+      GIMSK |= (1 << INT3);
+    #endif
+      break;
+      
 #endif
     }
   }
@@ -221,6 +242,32 @@ void detachInterrupt(uint8_t interruptNum) {
       GIMSK &= ~(1 << INT1);
     #else
       #warning detachInterrupt may need some more work for this cpu (case 1)
+    #endif
+      break;
+      
+      
+    case 2:
+    #if defined(EIMSK) && defined(INT2)
+      EIMSK &= ~(1 << INT2);
+    #elif defined(GICR) && defined(INT2)
+      GICR &= ~(1 << INT2);
+    #elif defined(GIMSK) && defined(INT2)
+      GIMSK &= ~(1 << INT2);
+    #else
+      #warning detachInterrupt may need some more work for this cpu (case 2)
+    #endif
+      break;
+      
+      
+    case 3:
+    #if defined(EIMSK) && defined(INT3)
+      EIMSK &= ~(1 << INT3);
+    #elif defined(GICR) && defined(INT3)
+      GICR &= ~(1 << INT3); 
+    #elif defined(GIMSK) && defined(INT3)
+      GIMSK &= ~(1 << INT3);
+    #else
+      #warning detachInterrupt may need some more work for this cpu (case 3)
     #endif
       break;
 #endif
@@ -320,6 +367,13 @@ ISR(INT1_vect) {
 ISR(INT2_vect) {
   if(intFunc[EXTERNAL_INT_2])
     intFunc[EXTERNAL_INT_2]();
+}
+#endif
+
+#if defined(EICRA) && defined(ISC30)
+ISR(INT3_vect) {
+  if(intFunc[EXTERNAL_INT_3])
+    intFunc[EXTERNAL_INT_3]();
 }
 #endif
 

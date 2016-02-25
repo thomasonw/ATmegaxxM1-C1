@@ -2,6 +2,12 @@
   wiring_private.h - Internal header file.
   Part of Arduino - http://www.arduino.cc/
 
+  
+  Modified to support ATmega32M1, ATmega64M1, etc.   Feb 2016  
+        Al Thomason:  http://smartmppt.blogspot.com/
+
+
+
   Copyright (c) 2005-2006 David A. Mellis
 
   This library is free software; you can redistribute it and/or
@@ -57,7 +63,7 @@ extern "C"{
 #define EXTERNAL_NUM_INTERRUPTS 8
 #elif defined(__AVR_ATmega1284P__) || defined(__AVR_ATmega644P__)
 #define EXTERNAL_NUM_INTERRUPTS 3
-#elif defined(__AVR_ATmega32U4__) || defined(__AVR_ATmega32C1__)
+#elif defined(__AVR_ATmega32U4__) || defined(__AVR_ATmega32C1__) || defined(__AVR_ATmega32M1__) || defined(__AVR_ATmega64M1__)
 #define EXTERNAL_NUM_INTERRUPTS 4
 #else
 #define EXTERNAL_NUM_INTERRUPTS 2
