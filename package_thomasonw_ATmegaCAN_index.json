@@ -12,15 +12,15 @@
         {
           "name": "ATmegaCAN",
           "architecture": "avr",
-          "version": "1.0.0",
+          "version": "1.0.1",
           "category": "Contributed",
           "help": {
             "online": ""
           },
-          "url": "https://github.com/thomasonw/ATmegaCAN/raw/gh-pages/ATmegaCAN-1.0.0.tar.gz",
-          "archiveFileName": "ATmegaCAN-1.0.0.tar.gz",
-          "checksum": "SHA-256:B5B1039C5F253AA9AF2F8E4CBA81C87B73E928B9BAC9ED4B75569B0F61CE0BEC",
-          "size": "112204",
+          "url": "https://github.com/thomasonw/ATmegaCAN/raw/gh-pages/ATmegaCAN-1.0.1.tar.gz",
+          "archiveFileName": "ATmegaCAN-1.0.1.tar.gz",
+          "checksum": "SHA-256:13CF03D9C203DFC8B40518E3F2C054897FA7EA5BA9AEF1322E8E39A0E25AF42E",
+          "size": "112437",
           "boards": [
             {"name": "ATmega32M1"},
             {"name": "ATmega64M1"}
