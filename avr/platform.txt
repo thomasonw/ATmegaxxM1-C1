@@ -13,8 +13,7 @@
 
 
 name=ATmegaCAN
-version=1.0.2
-
+version=1.6.7
 
 # AVR compile variables
 # --------------------- 
