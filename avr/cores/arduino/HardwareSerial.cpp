@@ -606,8 +606,28 @@ size_t HardwareSerial::write(uint8_t c)
   // If the output buffer is full, there's nothing for it other than to 
   // wait for the interrupt handler to empty it a bit
   // ???: return 0 here instead?
-  while (i == _tx_buffer->tail)
-    ;
+  while (i == _tx_buffer->tail) {
+                                                // A.T.:  KILL ME NOW!!!!  THIS HAD A HARD-WEDGE IN IT IF IRQs WERE LOST!!!!!
+                                                // REALLY NEED TO UPDATE THIS WHOLE CORE TO THE LATEST ARDUINO BASE...
+                                                // For now, if we are stuck here, check to see if by chance the output register is sitting idle, and if so give it a kick..
+                                                
+    if (bit_is_clear(SREG, SREG_I)) {           // This code pulled from latest Arduino CORE lib.
+      // Interrupts are disabled, so we'll have to poll the data
+      // register empty flag ourselves. If it is set, pretend an
+      // interrupt has happened and call the handler to free up
+      // space for us.
+      if(bit_is_set(LINSIR, LTXOK))  {                          // UART is just sitting there, empty waiting for something to do...
+		uint8_t k = tx_buffer.buffer[tx_buffer.tail];		    // Pull the next char out of the output buffer. 
+		tx_buffer.tail = (tx_buffer.tail + 1) % SERIAL_BUFFER_SIZE;
+        LINDAT = k;									           // And kick it out... 
+      } else {
+      // nop, the interrupt handler will free up space for us
+      }
+    }                                             
+  }                                      
+   
+     
+ 
 
 #ifdef LIN_UART
   unsigned char tmp = SREG;						// Globaly disable interupts while we figure things out.
