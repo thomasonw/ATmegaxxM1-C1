@@ -19,8 +19,8 @@
           },
           "url": "https://github.com/thomasonw/ATmegaCAN/raw/gh-pages/ATmegaCAN-1.0.3.tar.gz",
           "archiveFileName": "ATmegaCAN-1.0.3.tar.gz",
-          "checksum": "SHA-256:86B92A5E11FA5292E14D7C4F9C214D6BD4886260CCB776B040A0BF43141B51FB",
-          "size": "569856",
+          "checksum": "SHA-256:31C0DC2EA394D2C868AEAFD79B2C5F86E4A6343093D22A09E311CD5C59A0375A",
+          "size": "102622",
           "boards": [
             {"name": "ATmega32M1"},
             {"name": "ATmega64M1"}
