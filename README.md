@@ -16,7 +16,7 @@ CAN containing CPUs.
 Future:
   * Better menu structure
   * Inclusion of ATmega16M1, ATmega32C1, ATmega64C1
-  * Clarity around the other AVR CAN CPU:  AT90CANxxx
+
 
 
 More words to come...
@@ -34,11 +34,11 @@ Option 1)  Arduino Board Package Manager:
    3. Click the 'window box' to the right of the 'Additional Boards manager URLs:' entry window.
       * This will allow you to add more than one entry
    4. Copy the following URL into the box.
-       * https://thomasonw.github.io/ATmegaCAN/package_thomasonw_ATmegaCAN_index.json
+       * https://thomasonw.github.io/ATmegaxxM1-C1/package_thomasonw_ATmegaCAN_index.json
    5. Press OK button to close the data entry window
    6. Press OK button to close the Preferences menu.
    7. Open the Tools/Boards menu and select Boards Manager
-   8. Scroll down and click on the 'ATmegaCAN by thomasonw version x.x.x' entry
+   8. Scroll down and click on the 'ATmegaxxM1-C1 by thomasonw version x.x.x' entry
    9. press the Install button
 
 
