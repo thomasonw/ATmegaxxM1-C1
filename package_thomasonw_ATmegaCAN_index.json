@@ -3,7 +3,7 @@
     {
       "name": "ATmegaCAN",
       "maintainer": "thomasonw",
-      "websiteURL": "https://github.com/thomasonw/ATmegaCAN",
+      "websiteURL": "https://github.com/thomasonw/ATmegaxxM1-C1",
       "email": "",
       "help": {
         "online": ""
@@ -17,8 +17,8 @@
           "help": {
             "online": ""
           },
-          "url": "https://github.com/thomasonw/ATmegaCAN/raw/gh-pages/ATmegaCAN-1.0.3.tar.gz",
-          "archiveFileName": "ATmegaCAN-1.0.3.tar.gz",
+          "url": "https://github.com/thomasonw/ATmegaxxM1-C1/raw/gh-pages/ATmegaCAN-1.0.3.tar.gz",
+          "archiveFileName": "ATmegaxxM1-C1-1.0.3.tar.gz",
           "checksum": "SHA-256:31C0DC2EA394D2C868AEAFD79B2C5F86E4A6343093D22A09E311CD5C59A0375A",
           "size": "102622",
           "boards": [
