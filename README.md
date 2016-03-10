@@ -100,3 +100,10 @@ Support for IDE versions released prior to 1.6.7 may be found at:
    http://smartmppt.blogspot.com/search/label/xxM1-IDE
 
 
+CORE files
+--------------------
+A major effort for this porting effort is the modification of the CORE include files used by Arduino.  There is a separate GitHib repository which contains the edits I have made to enable the ATmegaM1/C1 CPUs:
+<https://github.com/thomasonw/Arduino---CORE-files-for-ATmegaM1-C1-port/tree/master/hardware/arduino/avr/cores/arduino>
+
+It is forked from the master Arduino files to allow updating from them as well.
+
