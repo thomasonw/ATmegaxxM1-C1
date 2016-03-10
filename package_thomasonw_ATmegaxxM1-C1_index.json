@@ -37,7 +37,7 @@
               "version": "6.0.1-arduino5"
             }
           ]
-        }
+        },
         {
           "name": "ATmegaxxM1-C1",
           "architecture": "avr",
