@@ -19,8 +19,8 @@
           },
           "url": "https://github.com/thomasonw/ATmegaxxM1-C1/raw/gh-pages/ATmegaxxM1-C1-1.0.3.tar.gz",
           "archiveFileName": "ATmegaxxM1-C1-1.0.3.tar.gz",
-          "checksum": "SHA-256:50334A2F2D6600708961113AEF2E99C683BC6E52DE437635C0DF2023EC5603CC",
-          "size": "102695",
+          "checksum": "SHA-256:765FF255379D4B2E8FCD62DA28E807EE1AC7AF92D01856E7FC3D23B5A474ED22",
+          "size": "102816",
           "boards": [
             {"name": "ATmega32M1"},
             {"name": "ATmega64M1"}
@@ -48,8 +48,8 @@
           },
           "url": "https://github.com/thomasonw/ATmegaxxM1-C1/raw/gh-pages/ATmegaxxM1-C1-1.0.4.tar.gz",
           "archiveFileName": "ATmegaxxM1-C1-1.0.4.tar.gz",
-          "checksum": "SHA-256:E0A683D5EAC77A26F732422999F5329CC99957D951D8978233F80A8E2D3422B9",
-          "size": "103722",
+          "checksum": "SHA-256:D7060734BB2048261BDE2EF0BD4A971F7462AD8A30B679CD0B54398686E43913",
+          "size": "103840",
           "boards": [
             {"name": "ATmega32M1"},
             {"name": "ATmega64M1"}
