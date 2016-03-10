@@ -3,7 +3,7 @@
   Part of Arduino - http://www.arduino.cc/
 
 
-  Modified to support ATmega32M1, ATmega64M1, etc.   Feb 2015  
+  Modified to support ATmega32M1, ATmega64M1, etc.   Feb 2015, 2016 
         Al Thomason:  http://smartmppt.blogspot.com/
 
 
@@ -75,6 +75,8 @@ static const uint8_t AD2 = 28;                                  // Differential 
 #define GAIN10 1
 #define GAIN20 2
 #define GAIN40 3
+
+#define DAC_PORT    10                                          // ATmegaxxM1 has DAC on Port 10 (pin PC7).  Enable it with analogWrite()
 
 
 
@@ -182,11 +184,11 @@ static const uint8_t AD2 = 28;                                  // Differential 
 // A0           D15             PD5             ADC2
 // A1           D16             PD6             ADC3
 // A2           D17             PB2             ADC5
-// A3           D18             PB5             ADC8 / AMP1-
-// A4           D19             PB6             ADC9 / AMP1+    
-// A5           D20             PC4             ADC10
-// A6           D21             PC5             ADC6 / AMP2-
-// A7           D22             PC6             ADC7
+// A3           D18             PC4             ADC8 / AMP1-
+// A4           D19             PC5             ADC9 / AMP1+    
+// A5           D20             PC6             ADC10
+// A6           D21             PB5             ADC6 / AMP2-
+// A7           D22             PB6             ADC7
 // A8           D23             PB7             ADC4
 //
 // A9           D24             --              Internal core temp sensor
