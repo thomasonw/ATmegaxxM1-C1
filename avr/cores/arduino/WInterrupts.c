@@ -347,6 +347,11 @@ IMPLEMENT_ISR(INT1_vect, EXTERNAL_INT_1)
 IMPLEMENT_ISR(INT2_vect, EXTERNAL_INT_2)
 #endif
 
+#if defined(EICRA) && defined(ISC30)
+IMPLEMENT_ISR(INT3_vect, EXTERNAL_INT_3)
+#endif
+
+
 #endif
 
 /*

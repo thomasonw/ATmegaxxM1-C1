@@ -1,42 +1,42 @@
-avrisp.name=(ATmegaCAN) AVR ISP
+avrisp.name=(ATmegaM1/C1) AVR ISP
 avrisp.communication=serial
 avrisp.protocol=stk500v1
 avrisp.program.protocol=stk500v1
 avrisp.program.tool=avrdude
 avrisp.program.extra_params=-P{serial.port}
  
-avrispmkii.name=(ATmegaCAN) AVRISP mkII 
+avrispmkii.name=(ATmegaM1/C1) AVRISP mkII 
 avrispmkii.communication=usb
 avrispmkii.protocol=stk500v2
 avrispmkii.program.protocol=stk500v2
 avrispmkii.program.tool=avrdude
 avrispmkii.program.extra_params=-Pusb
 
-usbtinyisp.name=(ATmegaCAN) USBtinyISP
+usbtinyisp.name=(ATmegaM1/C1) USBtinyISP
 usbtinyisp.protocol=usbtiny
 usbtinyisp.program.tool=avrdude
 usbtinyisp.program.extra_params=
 
-arduinoisp.name=(ATmegaCAN) ArduinoISP 
+arduinoisp.name=(ATmegaM1/C1) ArduinoISP 
 arduinoisp.protocol=arduinoisp
 arduinoisp.program.tool=avrdude
 arduinoisp.program.extra_params=
 
-usbasp.name=(ATmegaCAN) USBasp 
+usbasp.name=(ATmegaM1/C1) USBasp 
 usbasp.communication=usb
 usbasp.protocol=usbasp
 usbasp.program.protocol=usbasp
 usbasp.program.tool=avrdude
 usbasp.program.extra_params=-Pusb
 
-parallel.name=(ATmegaCAN) Parallel Programmer 
+parallel.name=(ATmegaM1/C1) Parallel Programmer 
 parallel.protocol=dapa
 parallel.force=true
 # parallel.delay=200
 parallel.program.tool=avrdude
 parallel.program.extra_params=-F
 
-arduinoasisp.name=(ATmegaCAN) Arduino as ISP 
+arduinoasisp.name=(ATmegaM1/C1) Arduino as ISP 
 arduinoasisp.communication=serial
 arduinoasisp.protocol=stk500v1
 arduinoasisp.speed=19200
