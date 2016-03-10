@@ -2,7 +2,7 @@
 # Modifed 3-3-2015 - Al Thomason - to enable ATmega32M1 and ATmega64M1 uC's
 # As used on Arduino MPPT controller
 # See: http://smartMPPT.blogspot.com/
-# See: https://github.com/thomasonw/ATmegaCAN
+# See: https://github.com/thomasonw/ATmegaxxM1-C1
 #
 #
 ##############################################################
