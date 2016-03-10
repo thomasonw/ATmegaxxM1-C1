@@ -1,0 +1,74 @@
+{
+  "packages": [
+    {
+      "name": "ATmegaM1-C1",
+      "maintainer": "thomasonw",
+      "websiteURL": "https://github.com/thomasonw/ATmegaxxM1-C1",
+      "email": "",
+      "help": {
+        "online": ""
+      },
+      "platforms": [
+        {
+          "name": "ATmegaM1-C1",
+          "architecture": "avr",
+          "version": "1.0.3",
+          "category": "Contributed",
+          "help": {
+            "online": ""
+          },
+          "url": "https://github.com/thomasonw/ATmegaxxM1-C1/raw/gh-pages/ATmegaxxM1-C1-1.0.3.tar.gz",
+          "archiveFileName": "ATmegaxxM1-C1-1.0.3.tar.gz",
+          "checksum": "SHA-256:50334A2F2D6600708961113AEF2E99C683BC6E52DE437635C0DF2023EC5603CC",
+          "size": "102695",
+          "boards": [
+            {"name": "ATmega32M1"},
+            {"name": "ATmega64M1"}
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "arduino",
+              "name": "avr-gcc",
+              "version": "4.8.1-arduino5"
+            },
+            {
+              "packager": "arduino",
+              "name": "avrdude",
+              "version": "6.0.1-arduino5"
+            }
+          ]
+        }
+        {
+          "name": "ATmegaxxM1-C1",
+          "architecture": "avr",
+          "version": "1.0.4",
+          "category": "Contributed",
+          "help": {
+            "online": ""
+          },
+          "url": "https://github.com/thomasonw/ATmegaxxM1-C1/raw/gh-pages/ATmegaxxM1-C1-1.0.4.tar.gz",
+          "archiveFileName": "ATmegaxxM1-C1-1.0.4.tar.gz",
+          "checksum": "SHA-256:60EECD17E9C2D4ACEF48ADAF8F5E0F547FE5767689BC3A3E7A66761ABCCD0353",
+          "size": "249456",
+          "boards": [
+            {"name": "ATmega32M1"},
+            {"name": "ATmega64M1"}
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "arduino",
+              "name": "avr-gcc",
+              "version": "4.8.1-arduino5"
+            },
+            {
+              "packager": "arduino",
+              "name": "avrdude",
+              "version": "6.0.1-arduino5"
+            }
+          ]
+        }
+      ],
+      "tools": []
+    }
+  ]
+}
