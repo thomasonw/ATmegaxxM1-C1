@@ -35,9 +35,10 @@ The ATmegaxxM1/C1 CPUs have some additional features which have allowed for the 
    
 * Enhancement to PIN-MODE() --> Setting up of built in differential amps AMP0..AMP2 
  * 1st parameter selected the differential amp to enable.  Use: AD0, AD1, or AD2
- * 2nd parameter specific gain to use.  Use:  GAIN10, GAIN20, GAIN40
- * Example:  _pinMode(AD0, GAIN20);_
- * Use GAIN0 to disable differential amp and restore ports to their original use.
+ * 2nd parameter specific gain to use.  Use:  GAIN5, GAIN10, GAIN20, GAIN40
+ * Example to use ADO (Ports D9 - D8):  _pinMode(AD0, GAIN20);_ 
+ * To disable a differential amp and restore ports to their original use, call pinMode() with the port you wish to use normaly
+ * Example to restore D9 (and D8), AD0 will be turned off:  _pinMode(D9, INPUT);_ 
  
 * Enhancement to  ANALOG-WRITE()  --> Access to DAC (Digital to Analog Converter)
  * A DAC is optional routed to port 10, use predefined DAC_PORT

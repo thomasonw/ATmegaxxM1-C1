@@ -92,6 +92,14 @@ void pinMode(uint8_t pin, uint8_t mode)
             DIDR0  &= ~(B01000000);
         }  
     }
+    
+    
+     if (pin == DAC_PORT) {      
+        DACON &= ~((1<<DAEN) | (1<<DAOE));                           // If DAC pin is being reassigned, make sure to turn off the DAC and release the pin.
+     }
+     
+        
+        
       // AT: Continue with original code.
 #endif
 
