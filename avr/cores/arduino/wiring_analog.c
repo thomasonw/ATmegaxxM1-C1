@@ -54,21 +54,21 @@ int analogRead(uint8_t pin)
 
 
 
-	if (pin == AD0)  sbi(AMP0CSR, AMP0EN); 						// If doing read on differnterial amps, make sure they have been started..
-	if (pin == AD1)  sbi(AMP1CSR, AMP1EN); 						// If doing read on differnterial amps, make sure they have been started..
-	if (pin == AD2)  sbi(AMP2CSR, AMP2EN); 						// If doing read on differnterial amps, make sure they have been started..
+	if (pin == AD0)  sbi(AMP0CSR, AMP0EN); 						// If doing read on differential amps, make sure they have been started..
+	if (pin == AD1)  sbi(AMP1CSR, AMP1EN); 						// If doing read on differential amps, make sure they have been started..
+	if (pin == AD2)  sbi(AMP2CSR, AMP2EN); 						// If doing read on differential amps, make sure they have been started..
                                                                 // atmegaxxM1 modes AT
 
 
 
-	if  (pin >= 15) pin -= 15; 								    // allow for channel or pin numbers.  (Allows access to channers we have not defined)
+	if  (pin >= 15) pin -= 15; 								    // allow for channel or pin numbers.  (Allows access to channels we have not defined)
 	if  (pin >= 14) return(0);									// Do not attempt to switch mux to reserved channels, seems to wedge chip...
 
 
 
     #define wacPIN_MASK 0x1F                                            // 5-bit mask, allows for > 8 channels, including differential channels.
 #else
-    #define wacPIN_MASK 0x07                                           // Origional 4-bit mask used by everyone else...
+    #define wacPIN_MASK 0x07                                           // Original 4-bit mask used by everyone else...
 #endif
 
  
@@ -125,9 +125,28 @@ int analogRead(uint8_t pin)
 	high = 0;
 #endif
 
+
+
+#if defined (__AVR_ATmega32C1__) || defined(__AVR_ATmega64C1__) || defined(__AVR_ATmega16M1__) || defined(__AVR_ATmega32M1__) || defined(__AVR_ATmega64M1__)
+
+    // One more special thing we need to check for, was this a differential amp ADC?
+    int16_t sum = (high << 8) | low;   
+    
+	if ((pin >= 14) & (pin <= 16) & (sum > 0x1FF)) {        // (pin was transformed above by analogPinToChannel()  )
+                                                            // Diff amps return an 8-bit + or - value, offset by 512.
+        sum   -= 0x3FF;                                     //   If we received a value larger than that, it 
+    }                                                       //   really is a negative value (meaning, '-' input has a higher voltage the '+'  
+
+    return(sum);    
+    
+
+#else
 	// combine the two bytes
 	return (high << 8) | low;
+#endif
+ 
 }
+
 
 // Right now, PWM output only works on the pins with
 // hardware support.  These are defined in the appropriate

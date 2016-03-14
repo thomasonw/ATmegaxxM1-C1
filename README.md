@@ -30,14 +30,14 @@ The ATmegaxxM1/C1 CPUs have some additional features which have allowed for the 
  * ADO will return results of built in differential amp AMP0 using:  (D9  - D8) * GAIN
  * AD1 will return results of built in differential amp AMP1 using:  (A4  - A3) * GAIN
  * AD2 will return results of built in differential amp AMP2 using:  (D10 - A6) * GAIN
+ * _analogRead()_ of Differential amps returns a SIGNED + or - value depending on the relative voltages of the +&- inputs.  Note also it is only an 8-bit value.
  * When the internal differential amps have been enabled, the existing analog port can still be read individually, however the Digital ports are disables to reduce noise.  
-
    
 * Enhancement to PIN-MODE() --> Setting up of built in differential amps AMP0..AMP2 
  * 1st parameter selected the differential amp to enable.  Use: AD0, AD1, or AD2
  * 2nd parameter specific gain to use.  Use:  GAIN5, GAIN10, GAIN20, GAIN40
  * Example to use ADO (Ports D9 - D8):  _pinMode(AD0, GAIN20);_ 
- * To disable a differential amp and restore ports to their original use, call pinMode() with the port you wish to use normaly
+ * To disable a differential amp and restore ports to their original use, call pinMode() with the port you wish to use normally
  * Example to restore D9 (and D8), AD0 will be turned off:  _pinMode(D9, INPUT);_ 
  
 * Enhancement to  ANALOG-WRITE()  --> Access to DAC (Digital to Analog Converter)
@@ -55,7 +55,7 @@ The ATmegaxxM1/C1 CPUs have some additional features which have allowed for the 
 * CAN - See: <https://github.com/thomasonw/avr_can> for Arduino compatible library
 
    
-
+Summary of new Keywords:  **GAIN5**, **GAIN10**, **GAIN20**, **GAIN40**, **DAC_PORT**
 
 
 
@@ -100,6 +100,15 @@ After either is used to install the support files, you can select the new CPUs f
 Support for IDE versions released prior to 1.6.7 may be found at:
    http://smartmppt.blogspot.com/search/label/xxM1-IDE
 
+
+   
+Versions
+-------------------
+v1.0.3 --> Original porting using rather old CORE files.  Does NOT implement  _analogWrite()_ for DAC.  _analogRead()_ of differential ports are not corrected for +/- values (raw ADC count is returned)
+
+v1.0.4 --> Reported to new CORE files from Arduino 1.6.8.   Added DAC support.   _analogRead()_ of differential ports are not corrected for +/- values (raw ADC count is returned)
+
+v1.0.5 --> *pinMode(DAC_PORT,xxx)*  disconnects DAC from port (is connected by *analogWrite(DAC_PORT, xx)*.  _analogRead()_ differential ports corrected for +/- values.
 
 CORE files
 --------------------
