@@ -30,7 +30,7 @@ The ATmegaxxM1/C1 CPUs have some additional features which have allowed for the 
  * ADO will return results of built in differential amp AMP0 using:  (D9  - D8) * GAIN
  * AD1 will return results of built in differential amp AMP1 using:  (A4  - A3) * GAIN
  * AD2 will return results of built in differential amp AMP2 using:  (D10 - A6) * GAIN
- * _analogRead()_ of Differential amps returns a SIGNED + or - value depending on the relative voltages of the +&- inputs.  Note also it is only an 8-bit value.
+ * _analogRead()_ of Differential amps returns a SIGNED + or - (+511 .. - 511) value depending on the relative voltages of the +&- inputs.
  * When the internal differential amps have been enabled, the existing analog port can still be read individually, however the Digital ports are disables to reduce noise.  
    
 * Enhancement to PIN-MODE() --> Setting up of built in differential amps AMP0..AMP2 
