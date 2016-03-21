@@ -58,6 +58,14 @@ The ATmegaxxM1/C1 CPUs have some additional features which have allowed for the 
 Summary of new Keywords:  **GAIN5**, **GAIN10**, **GAIN20**, **GAIN40**, **DAC_PORT**
 
 
+Notes
+------------
+There are some small hardware differences between the ATmegaxxM1/C1 CPUs and the ATmega328 (used in the Uno).  Mostly this will not be an issue, but one should be aware of them, including:
+* The ATmegaxxM1/C1 CPUs only have two timers, TIMER0 and TIMER1.  The function _TONE_ uses the 'last timer', in this case TIMER1 (as opposed to TIMER2 in the ATmega328 / Uno) 
+* The internal reference voltage is 2.56v, as opposed to 1.1v 
+ 
+
+
 
 Port Mapping
 ------------
