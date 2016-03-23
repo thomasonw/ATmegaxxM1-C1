@@ -101,7 +101,7 @@ void HardwareSerial::_tx_udr_empty_irq(void)
   // location". This makes sure flush() won't return until the bytes
   // actually got written
   sbi(*_ucsra, TXC0);
-  #endif                                                            // ATmegaxxM1/C1 clear this bit with _udr = c write above.
+  #endif                                                            // ATmegaxxM1/C1 clears this bit with _udr = c write above.
 
   if (_tx_buffer_head == _tx_buffer_tail) {
     // Buffer empty, so disable interrupts
@@ -256,9 +256,9 @@ size_t HardwareSerial::write(uint8_t c)
   // 500kbit/s) bitrates, where interrupt overhead becomes a slowdown.
   #if defined(LINBRRH)
    //      delay(10);
-   if (_tx_buffer_head == _tx_buffer_tail && bit_is_clear(*_ucsrb, UDRIE0)) {
-        *_udr = c;                      			                // LIN is sitting idle.  And push the character out to get things kick-started. 
-        sbi(*_ucsrb, UDRIE0);                                       // Enable Tx completed interupt 
+   if (_tx_buffer_head == _tx_buffer_tail && bit_is_clear(*_ucsrb, UDRIE0) & bit_is_clear(LINSIR, LBUSY)) {
+        sbi(*_ucsrb, UDRIE0);                                       // Buffer is empty, Tx IRQs disabled, and LIN Tx has finsihed sending last character out. Enable Tx completed interupt 
+        *_udr = c;                      			                // And push the character out to get things kick-started. 
         return 1;
     }
   #else
