@@ -118,6 +118,9 @@ v1.0.4 --> Reported to new CORE files from Arduino 1.6.8.   Added DAC support.  
 
 v1.0.5 --> *pinMode(DAC_PORT,xxx)*  disconnects DAC from port (is connected by *analogWrite(DAC_PORT, xx)*.  _analogRead()_ differential ports corrected for +/- values.
 
+v1.0.6 --> Enabled TONE capability (note, interfers with PWM as it uses the same timer..), corrected SerialWrite  IRQ race bug. 
+
+
 CORE files
 --------------------
 A major effort for this porting effort is the modification of the CORE include files used by Arduino.  There is a separate GitHib repository which contains the edits I have made to enable the ATmegaM1/C1 CPUs:
