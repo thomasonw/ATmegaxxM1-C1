@@ -61,9 +61,20 @@ Summary of new Keywords:  **GAIN5**, **GAIN10**, **GAIN20**, **GAIN40**, **DAC_P
 Notes
 ------------
 There are some small hardware differences between the ATmegaxxM1/C1 CPUs and the ATmega328 (used in the Uno).  Mostly this will not be an issue, but one should be aware of them, including:
-* The ATmegaxxM1/C1 CPUs only have two timers, TIMER0 and TIMER1.  The function _TONE_ uses the 'last timer', in this case TIMER1 (as opposed to TIMER2 in the ATmega328 / Uno) 
-* The internal reference voltage is 2.56v, as opposed to 1.1v 
+- The ATmegaxxM1/C1 CPUs only have two timers, TIMER0 and TIMER1.  The function _TONE_ uses the 'last timer', in this case TIMER1 (as opposed to TIMER2 in the ATmega328 / Uno) 
+- The internal reference voltage is 2.56v, as opposed to 1.1v 
  
+**Special note concerning PSC ports at power-on.**
+The ATmegaxxM1 CPUs contains a  high speed PSC (Power Stage Controller)  subsystem.  Targeted for high-speed PWM, most commonly in a push-pull configuration.  There are three channels for a total of 6 ports.  A special feature of the ATmegaxxM1 CPU is the ability to hold those ports at a pre-determined value at initial power-on and/or reset, to prevent unintended actions until such time as the startup code is able to execute.
+
+Fuse PSCRB has been set by default causing all 6 PSC  ports to be held LOW until such time as when they are used or reconfigured to a different purpose.  **Care should be taken in hardware design NOT to tie these pins to a value other then GND.  If there is a need to do so, make sure to use a current limiting resistor. ** The ports affected are:  PB0, PB1,  PB6, PB7,  PC0, PD0   (Arduino ports: D5, D6, A7, A8, D12 & D11)
+
+Though the ATmegaxxC1 does not contain a PSC subsystem, fuse PSCRB is still set - refer to Atmel users document to confirm the behavior of the ATmegaxxC1 CPU with this fuse set.
+
+
+
+
+
 
 
 
