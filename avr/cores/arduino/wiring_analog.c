@@ -159,6 +159,7 @@ void analogWrite(uint8_t pin, int val)
         //  ATmegaxxM1 enhancment - enable the DAC via analogWrite.
         //    This will force the port to an OUTPUT and then do a flash DAC conversion.
         
+       	ADMUX = DEFAULT << 6;              			// Make sure the Vref is selected.
         DACON = ((1<<DAEN) | (1<<DAOE));                        // Enable DAC, enable its port as output.
         
         DACL  = val;                                            // Send the value out to the DAC (lower 8-bits). 
