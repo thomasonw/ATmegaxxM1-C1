@@ -131,6 +131,8 @@ v1.0.5 --> *pinMode(DAC_PORT,xxx)*  disconnects DAC from port (is connected by *
 
 v1.0.6 --> Enabled TONE capability (note, interfers with PWM as it uses the same timer..), corrected SerialWrite  IRQ race bug. 
 
+v1.0.7 --> Initialize VREF at 1st usage of DAC, restructured to Arduino menu selections, added menu options for PWM initial state (Thank you Geraldjust).
+
 
 CORE files
 --------------------
