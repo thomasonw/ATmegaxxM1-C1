@@ -25,7 +25,7 @@ The ATmegaxxM1/C1 CPUs have some additional features which have allowed for the 
 
 * Enhancement to ANALOG-READ() --> Additional ADC inputs
  * A9 will return the internal AVR temperature sensor.
-    Caution:  The ADC reference MUST first be set to 2.56v via:  _analogReferance(INTERNAL);_
+    Caution:  The ADC reference MUST first be set to 2.56v via:  _analogReference(INTERNAL);_
  * A10 will return Vcc/4
  * ADO will return results of built in differential amp AMP0 using:  (D9  - D8) * GAIN
  * AD1 will return results of built in differential amp AMP1 using:  (A4  - A3) * GAIN
