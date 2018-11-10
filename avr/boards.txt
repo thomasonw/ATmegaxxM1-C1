@@ -8,6 +8,9 @@
 # Added options to turn PCS ON, all PCS LOW or HIGH
 # Added support for AtmegaxC1
 #
+# Modified by: GeraldJust - 11/10/18
+# Notes: Added Menu sub-variant for New board "CanDuino"
+#
 #
 ##############################################################
 
@@ -80,6 +83,74 @@ ATmegaxxM1/C1.menu.clock.8MHz_internal.upload.speed=57600
 ATmegaxxM1/C1.menu.clock.8MHz_internal.bootloader.low_fuses=0xF2
 ATmegaxxM1/C1.menu.clock.8MHz_internal.bootloader.high_fuses=0xDE
 ATmegaxxM1/C1.menu.clock.8MHz_internal.bootloader.file=optiboot/optiboot_{build.name2}_8MHz.hex
+
+
+############################################################
+
+
+
+CanDuino.name=CanDuino
+CanDuino.upload.tool=avrdude
+CanDuino.upload.protocol=arduino
+CanDuino.build.variant=CanDuino
+CanDuino.build.core=arduino
+
+CanDuino.bootloader.tool=avrdude
+CanDuino.bootloader.unlock_bits=0x3F
+CanDuino.bootloader.lock_bits=0x0F
+
+CanDuino.menu.variant.64m1=ATmega64m1
+CanDuino.menu.variant.64m1.build.mcu=atmega64m1
+CanDuino.menu.variant.64m1.build.board=ATmega64M1
+CanDuino.menu.variant.64m1.build.name2=atmega64M1
+CanDuino.menu.variant.64m1.upload.maximum_size=64512
+CanDuino.menu.variant.64m1.upload.maximum_data_size=4096
+
+CanDuino.menu.variant.32m1=ATmega32m1
+CanDuino.menu.variant.32m1.build.mcu=atmega32m1
+CanDuino.menu.variant.32m1.build.board=ATmega32M1_16xtl
+CanDuino.menu.variant.32m1.build.name2=atmega32M1
+CanDuino.menu.variant.32m1.upload.maximum_size=32256
+CanDuino.menu.variant.32m1.upload.maximum_data_size=2048
+
+CanDuino.menu.PSC.OFF=OFF
+CanDuino.menu.PSC.OFF.bootloader.extended_fuses=0x3D
+CanDuino.menu.PSC.LOW=LOW
+CanDuino.menu.PSC.LOW.bootloader.extended_fuses=0x1D
+CanDuino.menu.PSC.HGH=HIGH
+CanDuino.menu.PSC.HIGH.bootloader.extended_fuses=0x05
+
+##############################################################
+
+#make CanDuino AVR_FREQ=16000000L BAUD_RATE=57600
+CanDuino.menu.clock.16MHz_external.build.core=arduino
+CanDuino.menu.clock.16MHz_external.build.f_cpu=16000000L
+CanDuino.menu.clock.16MHz_external=16MHz External
+CanDuino.menu.clock.16MHz_external.upload.speed=57600
+CanDuino.menu.clock.16MHz_external.bootloader.low_fuses=0xFF
+CanDuino.menu.clock.16MHz_external.bootloader.high_fuses=0xDE
+CanDuino.menu.clock.16MHz_external.bootloader.file=optiboot/optiboot_{build.name2}_16Mhz.hex
+
+
+
+#make CanDuino AVR_FREQ=16000000L BAUD_RATE=57600
+CanDuino.menu.clock.8MHz_external.build.core=arduino
+CanDuino.menu.clock.8MHz_external.build.f_cpu=8000000L
+CanDuino.menu.clock.8MHz_external=8MHz External
+CanDuino.menu.clock.8MHz_external.upload.speed=57600
+CanDuino.menu.clock.8MHz_external.bootloader.low_fuses=0xFF
+CanDuino.menu.clock.8MHz_external.bootloader.high_fuses=0xDE
+CanDuino.menu.clock.8MHz_external.bootloader.file=optiboot/optiboot_{build.name2}_8Mhz.hex
+
+
+#make CanDuino AVR_FREQ=8000000L BAUD_RATE=57600
+CanDuino.menu.clock.8MHz_internal.build.core=arduino
+CanDuino.menu.clock.8MHz_internal.build.f_cpu=8000000L
+CanDuino.menu.clock.8MHz_internal=8MHz Internal
+CanDuino.menu.clock.8MHz_internal.upload.speed=57600
+CanDuino.menu.clock.8MHz_internal.bootloader.low_fuses=0xF2
+CanDuino.menu.clock.8MHz_internal.bootloader.high_fuses=0xDE
+CanDuino.menu.clock.8MHz_internal.bootloader.file=optiboot/optiboot_{build.name2}_8MHz.hex
 
 
 ############################################################
