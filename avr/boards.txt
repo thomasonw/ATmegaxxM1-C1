@@ -88,7 +88,7 @@ ATmegaxxM1/C1.menu.clock.8MHz_internal.bootloader.file=optiboot/optiboot_{build.
 
 
 
-CanDuino.name=CANIO Board
+CanDuino.name=CAN64 IO Board
 CanDuino.upload.tool=avrdude
 CanDuino.upload.protocol=arduino
 CanDuino.build.variant=CanDuino
