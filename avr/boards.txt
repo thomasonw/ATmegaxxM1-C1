@@ -8,8 +8,8 @@
 # Added options to turn PCS ON, all PCS LOW or HIGH
 # Added support for AtmegaxC1
 #
-# Modified by: GeraldJust - 11/10/18
-# Notes: Added Menu sub-variant for New board "CanDuino"
+# Modified by: GeraldJust - 12/05/18
+# Notes: Added Menu sub-variant for New board "CAN64 IO Board"
 #
 #
 ##############################################################
