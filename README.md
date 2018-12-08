@@ -133,6 +133,8 @@ v1.0.6 --> Enabled TONE capability (note, interfers with PWM as it uses the same
 
 v1.0.7 --> Initialize VREF at 1st usage of DAC, restructured to Arduino menu selections, added menu options for PWM initial state (Thank you Geraldjust).
 
+V1.0.8 --> Added support for dedicated 64m1 with Arduino footprint https://www.tindie.com/products/15615/ (By GeraldJust)
+
 
 CORE files
 --------------------
