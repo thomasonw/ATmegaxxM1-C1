@@ -11,10 +11,11 @@ CAN containing CPUs.
 * Currently supported CPUs include:
  * ATmega64M1
  * ATmega32M1
+ * ATmega16M1
 
 
 Future:
-  * Inclusion of ATmega16M1, ATmega32C1, ATmega64C1
+  * Inclusion of ATmega32C1, ATmega64C1
 
 
 
@@ -135,6 +136,7 @@ v1.0.7 --> Initialize VREF at 1st usage of DAC, restructured to Arduino menu sel
 
 V1.0.8 --> Added support for dedicated 64m1 with Arduino footprint https://www.tindie.com/products/15615/ (By GeraldJust)
 
+V1.0.9 --> Added support for ATmega16M1
 
 CORE files
 --------------------
